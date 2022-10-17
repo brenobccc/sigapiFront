@@ -3,7 +3,7 @@ import {
     BrowserRouter, Routes, Route,
   } from 'react-router-dom';
 
-import TelaApresentacao from './components/TelaApresentacao';
+import TelaApresentacao from './components/Apresentacao/TelaApresentacao';
 import TelaCadastro from './components/TelaCadastro';
 import TelaDiario from './components/TelaDiario';
 import TelaLogin from './components/TelaLogin';

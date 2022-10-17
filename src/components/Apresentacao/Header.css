@@ -1,0 +1,52 @@
+.header{
+    background: #347c04;
+    height: 360px;
+}
+
+
+.header .banner{
+    background-image: url(banner.svg);
+    background-repeat: no-repeat;
+    height: 90%;
+}
+.header .header-nav{
+    box-sizing: border-box;
+    padding: 0 40px;
+    background: #000000;
+    height: 15%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-nav .logo{
+    width: 15%;
+    height: 85%;
+    background-image: url(logo_sigapi.png);
+    background-size: 75%;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+
+.header-nav nav{
+    width: 420px;
+    height: 90%;
+}
+
+.header-nav nav ul{
+    display: flex;
+    height: 100%;
+    justify-content: space-around;
+}
+
+.header-nav nav li{
+    list-style: none;
+    color: white;
+    width: 40%;
+    height: 95%;
+    background-color: aqua;
+    border-radius: 8px;
+}
+
