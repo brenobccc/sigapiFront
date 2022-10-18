@@ -1,15 +1,6 @@
 import React from "react";
+import "./Footer.css"
 export default function Footer(){
-    /*return (
-    <>
-        <header>
-            <nav>
 
-            </nav>
-            <div class="banner">
-
-            </div>
-        </header>
-    </>);*/
-    return <h1>Footer</h1>
+    return <div id="footer"></div>
 }

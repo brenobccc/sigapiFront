@@ -6,8 +6,8 @@ import Footer from "./Footer";
 export default function TelaPrincipal(){
     return (<>
         <Header/>
-        {/*<Home/>*/}
-        {/*<Footer/>*/}
+        <Home/>
+        <Footer/>
         </>
     )
 }   

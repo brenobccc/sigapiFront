@@ -1,15 +1,18 @@
 import React from "react";
+import "./Home.css"
 export default function Home(){
-    /*return (
-    <>
-        <header>
-            <nav>
+    
+    return (
 
-            </nav>
-            <div class="banner">
-
+        <div id="body">
+            <div class="body-img">
+                <div id="body-ifce-logo">
+                </div>
             </div>
-        </header>
-    </>);*/
-    return <h1>Home</h1>
+            <div class="body-content">
+                <div class="body-grid"></div>
+                <div class="body-grid"></div>
+            </div>
+        </div>
+    );
 }
