@@ -74,6 +74,7 @@
     box-sizing: border-box;
     padding: 14px 20px;
     color: black;
+    cursor: pointer;
 }
 
 

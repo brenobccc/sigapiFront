@@ -32,7 +32,33 @@
 
 .body-content .body-grid{
     width: 45%;
-    height: 70%;
+    height: 63%;
     background-color: #E8CDCD;
     border-radius: 25px;
+    box-sizing: border-box;
+    padding: 15px;
+}
+
+.body-content .body-grid p{
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+
+#imgIFCE{
+    margin: 5px;
+    width: 98%;
+    height: 90%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(IFCE_campus_grid.png);
+}
+
+#imgHALLW{
+    margin: 5px;
+    width: 98%;
+    height: 90%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(halloween.png);
 }

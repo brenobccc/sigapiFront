@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 import "./Header.css"
 export default function Header(){
     return (
@@ -8,7 +10,7 @@ export default function Header(){
                 <div class="logo" onClick={() => alert("teste")}></div>
                 <nav>  
                     <ul>
-                        <li class="botao1"> Entrar </li>
+                        <li class="botao1" onClick={()=>{ <Link to={'/TelaLogin'}/>}}> Entrar </li>
                         <li class="botao2"> Notícias </li>
                     </ul>
                 </nav>

@@ -6,7 +6,7 @@ import {
 import TelaApresentacao from './components/Apresentacao/TelaApresentacao';
 import TelaCadastro from './components/TelaCadastro';
 import TelaDiario from './components/TelaDiario';
-import TelaLogin from './components/TelaLogin';
+import TelaLogin from './components/Login/TelaLogin';
 import Teste from './components/Teste';
 
 const rotas =  () => {
