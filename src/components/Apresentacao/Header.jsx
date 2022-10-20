@@ -6,16 +6,16 @@ export default function Header(){
     return (
     <>
         <div className="header">
-            <div class="header-nav"> 
-                <div class="logo" onClick={() => alert("teste")}></div>
+            <div className="header-nav"> 
+                <div className="logo" onClick={() => alert("teste")}></div>
                 <nav>  
                     <ul>
-                        <li class="botao1" onClick={()=>{ <Link to={'/TelaLogin'}/>}}> Entrar </li>
-                        <li class="botao2"> Notícias </li>
+                        <li className="botao1" onClick={()=>{ <Link to={'/TelaLogin'}/>}}> Entrar </li>
+                        <li className="botao2"> Notícias </li>
                     </ul>
                 </nav>
             </div>
-            <div class="banner">
+            <div className="banner">
                 <div className="banner-box">
                     <h1>Sistema SiGAPI  </h1>
                     <br></br>
@@ -24,7 +24,7 @@ export default function Header(){
                     </div>
                 </div>
             </div>
-           { /*<div class="logo"></div>
+           { /*<div className="logo"></div>
             <ul>
                 <li> item 1 </li>
                 <li> item 2 </li>

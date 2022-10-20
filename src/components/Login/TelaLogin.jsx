@@ -3,11 +3,11 @@ import './TelaLogin.css'
 
 export default function TelaLogin(){
     return <div id="login">
-                <div class="side-one">
+                <div className="side-one">
                     <h2> Seja bem vindo!</h2>
                     <div id="ifce-logo"></div>
                 </div>
-                <div class="side-two">
+                <div className="side-two">
                    <div className="side-two-content">
                         <div id="login-logo">
 
