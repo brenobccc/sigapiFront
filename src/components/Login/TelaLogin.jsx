@@ -13,9 +13,18 @@ export default function TelaLogin(){
 
                         </div>
                         <div id="login-form">
-                            <div id="login-content">
-        
-                            </div>
+                                <form id="login-content">
+                                    <label>
+                                        <input type="text" placeholder=" Matrícula "/>
+                                    </label>
+                                    <label>
+                                        <input type="password" placeholder=" Senha "/>
+                                    </label>
+                                    <div>
+                                        <p id="forgot-passwd"> <a href="">Esqueceu a senha?</a> </p>
+                                        <button type="submit">Entrar</button>
+                                    </div>
+                                </form>
                         </div>
                    </div> 
                 </div>

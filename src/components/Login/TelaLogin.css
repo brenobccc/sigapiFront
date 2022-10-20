@@ -57,11 +57,59 @@
     height: 75%;
     width: 100%;
     box-sizing: border-box;
-    padding: 50px;
+    padding: 20px;
 }
 
 #login-form #login-content{
-    background-color: blue;
     width: 100%;
     height: 100%;
 }
+
+
+input{
+    width: 90%;
+    height: 50px;
+    border-radius: 12px;
+    box-sizing: border-box;
+    padding: 2px;
+    font-size:large;
+    background-color: #d3baba;
+    border: 0 solid white;
+    margin: 20px 2px 5px 20px;
+}
+
+#forgot-passwd{
+    text-align: right;
+    width: 100%;
+}
+
+#forgot-passwd a{
+    color: black;
+}
+
+#login-content button{
+    cursor: pointer;
+    margin: 23px;
+    background-color: #0DB53E;
+    width: 90%;
+    height: 60px;
+    border-radius: 30px;
+    font-size: large;
+    border: 0px solid transparent;
+    transition: background 0.5s;
+    letter-spacing: 2px;
+}
+
+#login-content button:hover{
+    background-color: #218b41;
+}
+
+#login-content div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+

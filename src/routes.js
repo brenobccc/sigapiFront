@@ -8,6 +8,7 @@ import TelaCadastro from './components/TelaCadastro';
 import TelaDiario from './components/TelaDiario';
 import TelaLogin from './components/Login/TelaLogin';
 import Teste from './components/Teste';
+import Home from "./components/Home";
 
 const rotas =  () => {
     return (
@@ -18,6 +19,8 @@ const rotas =  () => {
           <Route path="/Diario" exact element={<TelaDiario/>} />
           <Route path="/Login" exact element={<TelaLogin/>} />
           <Route path="teste" element={<Teste/>} />
+          <Route path="/Home" element={<Home/>}/>
+          
         </Routes>
       </BrowserRouter>
     )
