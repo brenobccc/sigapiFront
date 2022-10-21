@@ -18,6 +18,7 @@
     height: 100%;
     border-radius: 40px;
     background-color: rgb(100, 255, 103,67%);
+    filter: drop-shadow(5px 5px 2px rgb(90, 89, 89));
     background-image: url(ifce-logo.svg);
     background-position: center;
     background-repeat: no-repeat;
@@ -30,6 +31,7 @@
     padding: 20px;
     display: flex;
     flex-wrap: wrap;
+    justify-content: flex-end;
 }
 
 #home-body-nav #nav-option-menu{
