@@ -6,10 +6,6 @@
 
 .header .banner{
     background-image: url(Banner-home.svg);
-    background-repeat: no-repeat;
-    height: 85%;
-    box-sizing: border-box;
-    padding: 40px;
 }
 .header #banner-id{
     width: 100%;

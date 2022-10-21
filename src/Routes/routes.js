@@ -4,11 +4,11 @@ import {
   } from 'react-router-dom';
 import TelaApresentacao from '../components/Apresentacao/TelaApresentacao';
 import TelaCadastro from '../components/TelaCadastro';
-import TelaDiario from '../components/TelaDiario';
+import TelaDiario from '../components/TelaDiario/TelaDiario';
 import TelaLogin from '../components/Login/TelaLogin';
 import Home from "../components/Home/Home.jsx";
 import CalendarioAcademico from '../components/CalendarioAcademico';
-import HorarioIndividual from '../components/HorarioIndividual';
+import HorarioIndividual from '../components/HorarioIndividual/HorarioIndividual';
 
 
 let privateControll = true;/*Método de controle temporário para rota privada*/
