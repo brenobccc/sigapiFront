@@ -6,7 +6,7 @@ import TelaApresentacao from '../components/Apresentacao/TelaApresentacao';
 import TelaCadastro from '../components/TelaCadastro';
 import TelaDiario from '../components/TelaDiario';
 import TelaLogin from '../components/Login/TelaLogin';
-import Home from "../components/Home";
+import Home from "../components/Home/Home.jsx";
 
 let privateControll = true;/*Método de controle temporário para rota privada*/
 /*em breve será sofisticado para um controle local ou usando redux/useContext*/
@@ -16,9 +16,6 @@ const rotas =  () => {
     return (
       <BrowserRouter>
         <Routes>
-          <Route path="/" exact element={<TelaApresentacao/>} />
-          <Route path="/Login" element={<TelaLogin/>} />
-          <Route path="/TelaCadastro" element={<TelaCadastro/>} />
           
           {/*Se o usuário estiver logado ele irá habilitar as demais rotas
            e caso ele tente acessar qualquer outra rota, ele irá redirecionar para o /*/}
@@ -27,9 +24,15 @@ const rotas =  () => {
                 <>
                   <Route path="/Diario" element={<TelaDiario/>} />
                   <Route path="/Home" element={<Home/>}/>
+                  <Route path="*" element={<Navigate replace to="/Home"/>}/>
                 </>
               ) 
-              : <Route path="*" element={<Navigate replace to="/" />}/>
+              : (<>
+                    <Route path="/" exact element={<TelaApresentacao/>} />
+                    <Route path="/Login" element={<TelaLogin/>} />
+                    <Route path="/TelaCadastro" element={<TelaCadastro/>} />
+                    <Route path="*" element={<Navigate replace to="/"/>}/>
+                </>)
           }
 
         </Routes>
