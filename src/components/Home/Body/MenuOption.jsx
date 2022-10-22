@@ -4,6 +4,7 @@ import diario from "./diario.svg";
 import home from "./home.svg";
 import calendarioacademico from "./calendarioacademico.svg";
 import horarioindividual from "./horarioindividual.svg";
+import boletim from "./boletim.svg";
 import { useNavigate } from "react-router-dom";
 
 export default function MenuOption(props){
@@ -14,6 +15,7 @@ export default function MenuOption(props){
         case 2: image = calendarioacademico; break;
         case 3: image = diario; break;
         case 4: image = horarioindividual; break;
+        case 5: image = boletim; break;
     }
     
     const estilo = {

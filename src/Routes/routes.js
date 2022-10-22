@@ -7,9 +7,9 @@ import TelaCadastro from '../components/TelaCadastro';
 import TelaDiario from '../components/TelaDiario/TelaDiario';
 import TelaLogin from '../components/Login/TelaLogin';
 import Home from "../components/Home/Home.jsx";
-import CalendarioAcademico from '../components/CalendarioAcademico';
+import CalendarioAcademico from '../components/CalendarioAcademico/CalendarioAcademico';
 import HorarioIndividual from '../components/HorarioIndividual/HorarioIndividual';
-
+import Boletim from '../components/Boletim/Boletim';
 
 let privateControll = true;/*Método de controle temporário para rota privada*/
 /*em breve será sofisticado para um controle local ou usando redux/useContext*/
@@ -28,6 +28,7 @@ const rotas =  () => {
                   <Route path="/diario" element={<TelaDiario/>} />
                   <Route path="/calendarioacademico" element={<CalendarioAcademico/>}/>
                   <Route path="/horarioindividual" element={<HorarioIndividual/>}/>
+                  <Route path="/boletim" element={<Boletim/>}/>
                   <Route path="/home" element={<Home/>}/>
                   <Route path="*" element={<Navigate replace to="/home"/>}/>
                 </>

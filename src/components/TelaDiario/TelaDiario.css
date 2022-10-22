@@ -76,9 +76,18 @@
 #detalhamento-semestre #box2{
     background-color: rgb(204, 201, 201);
     color: rgb(95, 93, 93);
+    transition: height 0.5s;
+    z-index: 1;
+}
+
+#detalhamento-semestre #box2:hover{
+    height: 200%;
+    color: white;
+    background-color: rgb(26, 88, 50);
 }
 
 #diario-content-cadeiras{
+    z-index: 0;
     box-sizing: border-box;
     padding-left: 1px;
     padding-right: 1px;
@@ -89,18 +98,82 @@
     padding-bottom: 60px;
 }
 
-#diario-content-cadeiras div{
+#diario-content-cadeiras .cadeira{
     cursor: pointer;
     width: 325px;
     height: 320px;
     filter: drop-shadow(3px 2px 1px rgb(133, 132, 132));
-    margin: 3px;
+    margin: 10px;
     border-radius: 12px;
+    overflow: hidden;
     background-color: rgb(229, 228, 226);
     transition: background 0.5s;
     box-sizing: border-box;
 }   
 
-#diario-content-cadeiras div:hover{
-    background-color: rgb(165, 161, 161)
+#diario-content-cadeiras .cadeira:hover{
+    background-color: rgb(206, 202, 202)
 }
+
+#diario-content-cadeiras div #codigo-cadeira{
+    height: 20%;
+    border-radius: 0;
+    width: 100%;
+    color: gray;
+    font-weight: bolder;
+    letter-spacing: 0.8px;
+}
+
+
+#diario-content-cadeiras div #nome-cadeira{
+    height: 60%;
+    color: #465049;
+    font-weight: bold;
+    font-size:22px;
+    text-align: center;
+}
+
+
+#diario-content-cadeiras div #nome-professor-cadeira{
+    height: 20%;
+    background-color: #465049;
+    color: #FFFFFF;
+}
+
+#diario-content-cadeiras div #codigo-cadeira,
+#diario-content-cadeiras div #nome-cadeira,
+#diario-content-cadeiras div #nome-professor-cadeira{
+    text-transform: uppercase;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#diario-nav{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+#diario-nav-logo{
+    height: 30%;
+    width: 100%;
+    background-image: url(ifce-logo.svg);
+    background-repeat: no-repeat;
+    background-size: 130px;
+    background-position: center;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+#diario-nav-menus{
+    height: 70%;
+    width: 90%;
+    background-color: #788d7e;
+    border-radius: 5px;
+}
+
+

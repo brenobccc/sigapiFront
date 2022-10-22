@@ -7,7 +7,8 @@ const wallpapers =
         'home':1,
         'calendarioacademico':2,
         'diario':3,
-        'horarioindividual':4
+        'horarioindividual':4,
+        'boletim':5
     }
 
 const colors = ['#A9BB97','#D7F9D4','#D8EAF8','#BDDF9B',
@@ -19,7 +20,7 @@ export default function HomeBody(){
         <MenuOption wallpaperIndex={wallpapers.calendarioacademico} screen="calendarioacademico" backgroundColor={colors[1]} nome="CALENDÁRIO ACADEMICO"/>,
         <MenuOption wallpaperIndex={wallpapers.diario} screen="diario" backgroundColor={colors[2]} nome="DIÁRIO"/>,
         <MenuOption wallpaperIndex={wallpapers.horarioindividual} screen="horarioindividual" backgroundColor={colors[3]} nome="HORÁRIO INDIVIDUAL"/>,
-        <MenuOption/>,
+        <MenuOption wallpaperIndex={wallpapers.boletim} screen="boletim" backgroundColor={colors[4]} nome="BOLETIM"/>,
         <MenuOption/>,
         <MenuOption/>,
         <MenuOption/>,
