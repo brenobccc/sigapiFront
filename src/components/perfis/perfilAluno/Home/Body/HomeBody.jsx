@@ -16,11 +16,11 @@ const colors = ['#A9BB97','#D7F9D4','#D8EAF8','#BDDF9B',
 
 export default function HomeBody(){
     let lista = [
-        <MenuOption wallpaperIndex={wallpapers.home} screen="home" backgroundColor={colors[0]} nome="HOME"/>,
-        <MenuOption wallpaperIndex={wallpapers.calendarioacademico} screen="calendarioacademico" backgroundColor={colors[1]} nome="CALENDÁRIO ACADEMICO"/>,
-        <MenuOption wallpaperIndex={wallpapers.diario} screen="diario" backgroundColor={colors[2]} nome="DIÁRIO"/>,
-        <MenuOption wallpaperIndex={wallpapers.horarioindividual} screen="horarioindividual" backgroundColor={colors[3]} nome="HORÁRIO INDIVIDUAL"/>,
-        <MenuOption wallpaperIndex={wallpapers.boletim} screen="boletim" backgroundColor={colors[4]} nome="BOLETIM"/>,
+        <MenuOption wallpaperIndex={wallpapers.home} screen="aluno/home" backgroundColor={colors[0]} nome="HOME"/>,
+        <MenuOption wallpaperIndex={wallpapers.calendarioacademico} screen="aluno/calendarioacademico" backgroundColor={colors[1]} nome="CALENDÁRIO ACADEMICO"/>,
+        <MenuOption wallpaperIndex={wallpapers.diario} screen="aluno/diario" backgroundColor={colors[2]} nome="DIÁRIO"/>,
+        <MenuOption wallpaperIndex={wallpapers.horarioindividual} screen="aluno/horarioindividual" backgroundColor={colors[3]} nome="HORÁRIO INDIVIDUAL"/>,
+        <MenuOption wallpaperIndex={wallpapers.boletim} screen="aluno/boletim" backgroundColor={colors[4]} nome="BOLETIM"/>,
         <MenuOption/>,
         <MenuOption/>,
         <MenuOption/>,

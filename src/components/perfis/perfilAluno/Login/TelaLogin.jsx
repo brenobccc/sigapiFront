@@ -1,7 +1,9 @@
 import React from "react";
+import {useNavigate } from "react-router-dom";
 import './TelaLogin.css'
 
 export default function TelaLogin(){
+    let navigate = useNavigate();
     return <div id="login">
                 <div className="side-one">
                     <h2> Seja bem vindo!</h2>
@@ -22,7 +24,7 @@ export default function TelaLogin(){
                                     </label>
                                     <div>
                                         <p id="forgot-passwd"> <a href="">Esqueceu a senha?</a> </p>
-                                        <button type="submit">Entrar</button>
+                                        <button type="submit" onClick={() => navigate("/aluno/home")}>Entrar</button>
                                     </div>
                                 </form>
                         </div>

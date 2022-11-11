@@ -1,0 +1,40 @@
+#home-professor-body{
+    width: 100%;
+    height: 500px;
+    background-color: #F4F4F4;
+    display: flex;
+}
+
+#home-professor-body #home-professor-body-img{
+    width: 32%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+
+#home-professor-body #home-professor-body-img #professor-body-logo{
+    width: 100%;
+    height: 100%;
+    border-radius: 40px;
+    background-color: rgb(100, 255, 103,67%);
+    filter: drop-shadow(5px 5px 2px rgb(90, 89, 89));
+    background-image: url(ifce-logo.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#home-professor-body #home-professor-body-nav{
+    width: 68%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+#home-professor-body-nav #nav-option-menu{
+    width: 200px;
+    height: 200px;
+}

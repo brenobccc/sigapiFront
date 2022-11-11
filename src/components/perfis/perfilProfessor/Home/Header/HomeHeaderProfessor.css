@@ -1,0 +1,96 @@
+.header-professor{
+    background: #347c04;
+    height: 360px;
+}
+
+
+.header-professor .professor-banner{
+    background-image: url(Banner-home.svg);
+    background-color: aqua;
+    height: 100%;  
+}
+.header-professor #banner-id{
+    width: 100%;
+    height: 70%;
+    padding-top: 5px;
+    box-sizing: border-box;
+}
+
+
+.header-professor .professor-banner-box{
+   height: 80%;
+   width: 500px;
+   color: white;
+}
+
+.header-professor .professor-banner-box h1{
+    font-size: 45px;
+    letter-spacing: 4px;
+    font-weight:500px;
+    font-family: bold;
+ }
+
+.header-professor .header-professor-nav{
+    box-sizing: border-box;
+    padding: 0 40px;
+    background: #000000;
+    height: 15%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-professor-nav .logo{
+    width: 15%;
+    height: 85%;
+    background-image: url(logo_sigapi.png);
+    background-size: 75%;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+
+.header-professor-nav nav{
+    width: 420px;
+    height: 90%;
+}
+
+.header-professor-nav nav ul{
+    display: flex;
+    height: 100%;
+    justify-content: space-around;
+}
+
+.header-professor-nav nav li{
+    list-style: none;
+    color: white;
+    width: 40%;
+    height: 95%;
+    background-color: aqua;
+    border-radius: 14px;
+    box-sizing: border-box;
+    padding: 14px 20px;
+    color: black;
+    cursor: pointer;
+}
+
+
+.header-professor-nav nav .botao1{
+    background-color: #FFFFFF;
+    transition: height 0.5s;
+}
+
+
+.header-professor-nav nav .botao1{
+}
+
+
+
+.header-professor-nav nav .botao1:hover{
+    height: 200px;
+}
+
+.header-professor-nav nav .botao2{
+    background-color: #5CAB0D;   
+}

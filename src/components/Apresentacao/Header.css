@@ -3,7 +3,6 @@
     height: 360px;
 }
 
-
 .header .banner{
     background-image: url(banner.svg);
     background-repeat: no-repeat;
@@ -53,46 +52,59 @@
     cursor: pointer;
 }
 
-.header-nav nav{
-    width: 420px;
-    height: 90%;
+.header .header-nav nav{
+    height: 80%;
+    width: 40%;
 }
+
 
 .header-nav nav ul{
-    display: flex;
-    height: 100%;
-    justify-content: space-around;
+    margin: auto;
+    width: 100%;
 }
 
-.header-nav nav li{
-    list-style: none;
-    color: white;
-    width: 40%;
-    height: 95%;
-    background-color: aqua;
-    border-radius: 14px;
-    box-sizing: border-box;
-    padding: 14px 20px;
-    color: black;
-    cursor: pointer;
+.header-nav nav ul .botao1,.header-nav nav ul .botao2{
+    width: 30%;
+    max-width: 200px;
 }
 
-
-.header-nav nav .botao1{
+.header-nav nav ul .botao1{
     background-color: #FFFFFF;
-    transition: height 0.5s;
+    transition: height 0s;
+}
+.header-nav nav ul .botao1:hover{
+    background-color: #f1f0f0;
+    height: 150px;
+    /*height: 260px;*/
+}
+.header-nav nav .botao1 ul{
+    display: none;
+    flex-direction: column;
+    transition: display 5s;
+    height: 0%;
+}
+
+.header-nav nav ul .botao1:hover ul{
+    display: flex;
+    height: 95%;
+
 }
 
 
-.header-nav nav .botao1{
+
+.header-nav nav .botao1 ul li{
+    display: flex;
+    flex-direction: column;
+    height: 45px;
+    width: 100%;
+    border-radius: 5px;
+    background-color: #c2c2c2;
+    transition: background-color 1s;
+
 }
 
 
-
-.header-nav nav .botao1:hover{
-    height: 200px;
-}
-
-.header-nav nav .botao2{
-    background-color: #5CAB0D;   
+.header-nav nav .botao1 ul li:hover{
+    color: white;
+    background-color: #1A4225;
 }

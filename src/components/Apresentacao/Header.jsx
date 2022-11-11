@@ -1,17 +1,29 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import "./Header.css"
 export default function Header(){
+    let navigate = useNavigate();
+    const listaPerfis = [
+        <li onClick={()=> { navigate(`/aluno/login`);}}> Aluno </li>,
+        <li onClick={()=> { alert("vazio");}}> Professor </li>
+    ];
+
     return (
     <>
         <div className="header">
             <div className="header-nav"> 
                 <div className="logo" onClick={() => alert("teste")}></div>
                 <nav>  
-                    <ul>
-                        <li className="botao1" onClick={()=>{ <Link to={'/TelaLogin'}/>}}> Entrar </li>
-                        <li className="botao2"> Notícias </li>
+                    <ul id="botoes">
+                        <li className="botao1" onClick={()=>{ }}> 
+                            <a> Login </a> 
+                            <ul>
+                               {listaPerfis.map((l) => l)}
+                            </ul>
+                        </li>
+                        <li className="botao2"> Cursos </li>
+                        <li className="botao2"> Disciplinas </li>
                     </ul>
                 </nav>
             </div>
