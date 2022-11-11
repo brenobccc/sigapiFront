@@ -12,28 +12,47 @@ import HorarioIndividual from '../components/perfis/perfilAluno/HorarioIndividua
 import Boletim from '../components/perfis/perfilAluno/Boletim/Boletim';
 import HomeProfessor from "../components/perfis/perfilProfessor/Home/HomeProfessor.jsx";
 
-let privateControll = true;/*Método de controle temporário para rota privada*/
+const alunoAcesso = !true;
+const professorAcesso = !true;
+
+//let privateControll = true;/*Método de controle temporário para rota privada*/
 /*em breve será sofisticado para um controle local ou usando redux/useContext*/
 
 const rotas =  () => {
-  
+  /*{lista.map((l) => l)}*/
+  const rotasAlunos = [
+                  <Route path="/aluno/diario" element={<TelaDiario/>} />,
+                  <Route path="/aluno/calendarioacademico" element={<CalendarioAcademico/>}/>,
+                  <Route path="/aluno/horarioindividual" element={<HorarioIndividual/>}/>,
+                  <Route path="/aluno/boletim" element={<Boletim/>}/>,
+                  <Route path="/aluno/home" element={<Home/>}/>,
+                  <Route path="/aluno/TelaCadastro" element={<TelaCadastro/>} />,
+                  <Route path="/aluno/Login" element={<TelaLogin/>} />
+  ];
+
+  const rotasProfessor = [
+                  <Route path="/professor/home" element={<HomeProfessor/>}/>
+  ];
+
     return (
       <BrowserRouter>
         <Routes>
-                {/* Perfil de Aluno*/}
-                 <Route path="/aluno/diario" element={<TelaDiario/>} />
-                  <Route path="/aluno/calendarioacademico" element={<CalendarioAcademico/>}/>
-                  <Route path="/aluno/horarioindividual" element={<HorarioIndividual/>}/>
-                  <Route path="/aluno/boletim" element={<Boletim/>}/>
-                  <Route path="/aluno/home" element={<Home/>}/>
-
-                  <Route path="/aluno/TelaCadastro" element={<TelaCadastro/>} />
-                  <Route path="/aluno/Login" element={<TelaLogin/>} />
-
-                {/* Perfil de Professor*/}
-                  <Route path="/professor/home" element={<HomeProfessor/>}/>
+          {/*Caso não esteja logado ele irá poder acessar somente as telas padrões*/}
+         { /*(alunoAcesso || professorAcesso) ? (
+        ) : (*/}
+              ({alunoAcesso || professorAcesso}) ? (
+                {/*ou o aluno tem permissão, ou o professor*/}
+                {alunoAcesso ? rotasAlunos.map((alunoComponente) => alunoComponente) : 
+                ()=>{rotasProfessor.map((professorComponente) => professorComponente)}}   
+              ) : 
+              (
+                <Route path="/" exact element={<TelaApresentacao/>} />  
+                <Route path="*" element={<Navigate replace to="/"/>}/>
+              );
               
-                  <Route path="/" exact element={<TelaApresentacao/>} />
+
+         {/* );*/}
+                  
           {/*Se o usuário estiver logado ele irá habilitar as demais rotas
            e caso ele tente acessar qualquer outra rota, ele irá redirecionar para o /*/}
           {/*privateControll ? 
@@ -48,10 +67,9 @@ const rotas =  () => {
                 </>
               ) 
               : (<>
-                    <Route path="/" exact element={<TelaApresentacao/>} />
                     <Route path="/Login" element={<TelaLogin/>} />
                     <Route path="/TelaCadastro" element={<TelaCadastro/>} />
-                    <Route path="*" element={<Navigate replace to="/"/>}/>
+
                 </>)
                 */
           }
