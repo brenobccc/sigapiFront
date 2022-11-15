@@ -1,4 +1,6 @@
 import React from "react";
+import { useContext } from "react";
+import AuthContext from "../../../../../contextos/AuthContext";
 import './HomeBody.css'
 import MenuOption from "./MenuOption";
 
@@ -14,7 +16,11 @@ const wallpapers =
 const colors = ['#A9BB97','#D7F9D4','#D8EAF8','#BDDF9B',
                 '#ABE6FF','94F945','#C8E1EC','#C1C6D9']
 
+
+
 export default function HomeBody(){
+       
+
     let lista = [
         <MenuOption wallpaperIndex={wallpapers.home} screen="aluno/home" backgroundColor={colors[0]} nome="HOME"/>,
         <MenuOption wallpaperIndex={wallpapers.calendarioacademico} screen="aluno/calendarioacademico" backgroundColor={colors[1]} nome="CALENDÁRIO ACADEMICO"/>,

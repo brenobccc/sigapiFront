@@ -2,7 +2,6 @@ import React from "react";
 import './CalendarioAcademico.css'
 
 export default function CalendarioAcademico(){
-    alert("Calendario Academico");
     return (
             <div id="calendarioacademico">
                 <div id="calendarioacademico-nav">

@@ -2,7 +2,7 @@ import React from "react";
 import './HorarioIndividual.css'
 
 export default function HorarioIndividual(){
-    alert("Horário Individual");
+    console.log("Horário Individual");
     return (
             <div id="horarioindividual">
                 <div id="horarioindividual-nav">

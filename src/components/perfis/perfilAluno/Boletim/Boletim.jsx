@@ -2,7 +2,7 @@ import React from "react";
 import './Boletim.css'
 
 export default function boletim(){
-    alert("Boletim");
+   
     return (
             <div id="boletim">
                 <div id="boletim-nav">

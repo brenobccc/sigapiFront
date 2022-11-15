@@ -6,7 +6,7 @@ export default function Header(){
     let navigate = useNavigate();
     const listaPerfis = [
         <li onClick={()=> { navigate(`/aluno/login`);}}> Aluno </li>,
-        <li onClick={()=> { alert("vazio");}}> Professor </li>
+        <li onClick={()=> {  navigate(`/professor/login`);}}> Professor </li>
     ];
 
     return (

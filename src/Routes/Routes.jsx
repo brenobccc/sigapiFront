@@ -13,11 +13,11 @@ import Boletim from '../components/perfis/perfilAluno/Boletim/Boletim';
 import HomeProfessor from "../components/perfis/perfilProfessor/Home/HomeProfessor.jsx";
 import { useState } from "react";
 import AuthContext from '../contextos/AuthContext.jsx'
+import { useEffect } from "react";
+import TelaLoginProfessor from "../components/perfis/perfilProfessor/Login/TelaLoginProfessor.jsx";
 
-const alunoAcesso = true;
+const alunoAcesso = !true;
 const professorAcesso = !true;
-
-
 
 export default () => {
   /*{lista.map((l) => l)}*/
@@ -28,34 +28,43 @@ export default () => {
                   <Route path="/aluno/boletim" element={<Boletim/>}/>,
                   <Route path="/aluno/home" element={<Home/>}/>,
                   <Route path="/aluno/TelaCadastro" element={<TelaCadastro/>} />,
-                  <Route path="/aluno/Login" element={<TelaLogin/>} />,
                   <Route path="*" element={<Navigate replace to="/aluno/home"/>}/>
-  ];
+                ];
 
   const rotasProfessor = [
                   <Route path="/professor/home" element={<HomeProfessor/>}/>,
                   <Route path="*" element={<Navigate replace to="/professor/home"/>}/>
   ];
 
-  const [auth,setAuth] = useState(!false);
-
-
-
-function rotas(){
-  return alunoAcesso ? rotasAlunos.map((l) => l) : rotasProfessor.map((l) => l)  
-}
-
-
-    return (
-      <AuthContext.Provider value={{auth,setAuth}}>
-        {console.log(auth)}
+  const [auth,setAuth] = useState({
+    alunoAcesso: false,
+    professorAcesso: false
+  });
+  
+  
+  useEffect(()=>{
+    setAuth(JSON.parse(localStorage.getItem('acessos')))
+    return;
+  },[]);
+  
+  
+  
+  function rotas(){
+    return auth.alunoAcesso ? rotasAlunos.map((l) => l) : auth.professorAcesso ? rotasProfessor.map((l) => l) : ""
+  }
+  
+  return (
+    <AuthContext.Provider value={{auth,setAuth}}>
             <BrowserRouter>
               <Routes>
-                      {auth ? 
+                      {(auth.alunoAcesso || auth.professorAcesso) ? 
                          rotas()
                         : <>
                          (<Route path="/" exact element={<TelaApresentacao/>} />  
-                         <Route path="*" element={<Navigate replace to="/"/>}/>)</>
+                         <Route path="*" element={<Navigate replace to="/"/>}/>
+                         <Route path="/aluno/Login" element={<TelaLogin/>} />,
+                         <Route path="/professor/Login" element={<TelaLoginProfessor/>} />,
+                          )</>
                       }
                     { /*:(
                       <Route path="/" exact element={<TelaApresentacao/>} />  
