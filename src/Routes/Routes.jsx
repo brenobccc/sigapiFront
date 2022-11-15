@@ -33,10 +33,18 @@ export default () => {
   ];
 
   const rotasProfessor = [
-                  <Route path="/professor/home" element={<HomeProfessor/>}/>
+                  <Route path="/professor/home" element={<HomeProfessor/>}/>,
+                  <Route path="*" element={<Navigate replace to="/professor/home"/>}/>
   ];
 
   const [auth,setAuth] = useState(!false);
+
+
+
+function rotas(){
+  return alunoAcesso ? rotasAlunos.map((l) => l) : rotasProfessor.map((l) => l)  
+}
+
 
     return (
       <AuthContext.Provider value={{auth,setAuth}}>
@@ -44,7 +52,7 @@ export default () => {
             <BrowserRouter>
               <Routes>
                       {auth ? 
-                        rotasAlunos.map((l) => l)
+                         rotas()
                         : <>
                          (<Route path="/" exact element={<TelaApresentacao/>} />  
                          <Route path="*" element={<Navigate replace to="/"/>}/>)</>
