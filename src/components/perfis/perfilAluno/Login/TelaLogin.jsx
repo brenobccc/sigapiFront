@@ -24,7 +24,15 @@ export default function TelaLogin(){
                                     </label>
                                     <div>
                                         <p id="forgot-passwd"> <a href="">Esqueceu a senha?</a> </p>
-                                        <button type="submit" onClick={() => navigate("/aluno/home")}>Entrar</button>
+                                        <button type="submit" onClick={() => {
+                                           
+                                           localStorage.setItem('isLoggedIn', true);
+                                           
+                                           console.log(localStorage.getItem('isLoggedIn'));
+                                           
+                                           //navigate("/aluno/home");
+                                        
+                                        }}>Entrar</button>
                                     </div>
                                 </form>
                         </div>
