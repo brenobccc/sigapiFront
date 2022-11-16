@@ -43,6 +43,11 @@ export default () => {
   
   
   useEffect(()=>{
+    if(localStorage.getItem('acessos') === null){
+      localStorage.setItem('acessos','{"alunoAcesso": false, "professorAcesso": false}')
+      setAuth(JSON.parse(localStorage.getItem('acessos')));
+      return;
+    }
     setAuth(JSON.parse(localStorage.getItem('acessos')))
     return;
   },[]);
