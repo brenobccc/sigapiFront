@@ -85,18 +85,18 @@ export default () => {
     });
     /*
     //GET USUARIO
-    axios.get("http://localhost:8000/sigapi/api/users/",
+    axios.get(urlBase+"/sigapi/api/users/",
     {
       headers:{
-        Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY4ODAzMTEwLCJpYXQiOjE2Njg3OTk1MTAsImp0aSI6ImY3OTkzZWMwZjY5YzQwMWM5MzZjOGYzYjEzNmY0MGFiIiwidXNlcl9pZCI6MX0.jSqNA9VvbYpr-MblyYzCBIsOof7PVtKEqY8usdKSzig"
+        Authorization: `Bearer ${token}`
       }
     })
     .then((response)=> console.log(response.data))
     .catch((err)=> {
-      console.error("Errro!")
+      console.error("Erro!")
     });
     //POST USUARIO
-    axios.post("http://localhost:8000/sigapi/api/users/",
+    axios.post(urlBase+"/sigapi/api/users/",
     {
       username: "br",
     password: "123",
@@ -104,26 +104,26 @@ export default () => {
     },
     {
       headers:{
-        Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY4ODAzMTEwLCJpYXQiOjE2Njg3OTk1MTAsImp0aSI6ImY3OTkzZWMwZjY5YzQwMWM5MzZjOGYzYjEzNmY0MGFiIiwidXNlcl9pZCI6MX0.jSqNA9VvbYpr-MblyYzCBIsOof7PVtKEqY8usdKSzig"
+        Authorization: `Bearer ${token}`
       }
     })
     .then((response)=> console.log(response.data))
     .catch((err)=> {
-      console.error("Errro!")
+      console.error("Erro!")
     });
      //GET ALUNO
-     axios.get("http://localhost:8000/sigapi/api/aluno/",
+     axios.get(urlBase+"/sigapi/api/aluno/",
      {
       headers:{
-        Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY4ODAzMTEwLCJpYXQiOjE2Njg3OTk1MTAsImp0aSI6ImY3OTkzZWMwZjY5YzQwMWM5MzZjOGYzYjEzNmY0MGFiIiwidXNlcl9pZCI6MX0.jSqNA9VvbYpr-MblyYzCBIsOof7PVtKEqY8usdKSzig"
+        Authorization: `Bearer ${token}`
       }
     })
     .then((response)=> console.log(response.data))
     .catch((err)=> {
-      console.error("Errro!")
+      console.error("Erro!")
     });
     //POST ALUNO
-    axios.post("http://localhost:8000/sigapi/api/aluno/",
+    axios.post(urlBase+"/sigapi/api/aluno/",
     {
       user: "http://127.0.0.1:8000/sigapi/api/users/7/",
       matricula: 222,
@@ -139,26 +139,26 @@ export default () => {
     },
     {
       headers:{
-        Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY4ODAzMTEwLCJpYXQiOjE2Njg3OTk1MTAsImp0aSI6ImY3OTkzZWMwZjY5YzQwMWM5MzZjOGYzYjEzNmY0MGFiIiwidXNlcl9pZCI6MX0.jSqNA9VvbYpr-MblyYzCBIsOof7PVtKEqY8usdKSzig"
+        Authorization: `Bearer ${token}`
       }
     })
     .then((response)=> console.log(response.data))
     .catch((err)=> {
-      console.error("Errro!")
+      console.error("Erro!")
     });
      //GET PROFESSOR
-     axios.get("http://localhost:8000/sigapi/api/professor/",
+     axios.get(urlBase+"/sigapi/api/professor/",
      {
       headers:{
-        Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY4ODAzMTEwLCJpYXQiOjE2Njg3OTk1MTAsImp0aSI6ImY3OTkzZWMwZjY5YzQwMWM5MzZjOGYzYjEzNmY0MGFiIiwidXNlcl9pZCI6MX0.jSqNA9VvbYpr-MblyYzCBIsOof7PVtKEqY8usdKSzig"
+        Authorization: `Bearer ${token}`
       }
     })
     .then((response)=> console.log(response.data))
     .catch((err)=> {
-      console.error("Errro!")
+      console.error("Erro!")
     });
     //POST PROFESSOR
-    axios.post("http://localhost:8000/sigapi/api/professor/",
+    axios.post(urlBase+"/sigapi/api/professor/",
     {
       "user": "http://127.0.0.1:8000/sigapi/api/users/4/",
       "cpf": 22,
@@ -170,20 +170,20 @@ export default () => {
     },
     {
       headers:{
-        Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY4ODAzMTEwLCJpYXQiOjE2Njg3OTk1MTAsImp0aSI6ImY3OTkzZWMwZjY5YzQwMWM5MzZjOGYzYjEzNmY0MGFiIiwidXNlcl9pZCI6MX0.jSqNA9VvbYpr-MblyYzCBIsOof7PVtKEqY8usdKSzig"
+        Authorization: `Bearer ${token}`
       }
     })
     .then((response)=> console.log(response.data))
     .catch((err)=> {
-      console.error("Errro!")
+      console.error("Erro!")
     });
 
    /*axios.create({
       baseURL: "localhost:8000",
     })
-    .post("http://localhost:8000/sigapi/api/users/",{
+    .post(urlBase+"/sigapi/api/users/",{
       headers:{
-        Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY4ODAxOTk5LCJpYXQiOjE2Njg3OTgzOTksImp0aSI6ImM2M2VjMzNhY2IzMjQ2NGQ4ZDAyNmMyMzcwYjRmMDg4IiwidXNlcl9pZCI6MX0.H4kQLjhaiuzIgwbo5cEUBomf05LMzp5lYjGWDplhc3Q"
+        Authorization: `Bearer ${token}`
       }
     }, {
       username: "c",
@@ -192,7 +192,7 @@ export default () => {
     })
     .then((response)=> console.log(response.data))
     .catch((err)=> {
-      console.error("Errro!")
+      console.error("Erro!")
     });*/
 
     if(localStorage.getItem('acessos') === null){
@@ -203,8 +203,6 @@ export default () => {
     setAuth(JSON.parse(localStorage.getItem('acessos')))
     return;
   },[]);
-  
-  
   
   function rotas(){
     return auth.alunoAcesso ? rotasAlunos.map((l) => l) : auth.professorAcesso ? rotasProfessor.map((l) => l) : ""
