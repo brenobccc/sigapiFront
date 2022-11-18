@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 import {
     BrowserRouter, Routes, Route, Navigate
   } from 'react-router-dom';
@@ -43,6 +44,38 @@ export default () => {
   
   
   useEffect(()=>{
+    axios.get("http://localhost:8000/sigapi/api/users/",{
+      headers:{
+        Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY4ODAxOTk5LCJpYXQiOjE2Njg3OTgzOTksImp0aSI6ImM2M2VjMzNhY2IzMjQ2NGQ4ZDAyNmMyMzcwYjRmMDg4IiwidXNlcl9pZCI6MX0.H4kQLjhaiuzIgwbo5cEUBomf05LMzp5lYjGWDplhc3Q"
+      }
+    })
+    .then((response)=> console.log(response.data))
+    .catch((err)=> {
+      console.error("Errro!")
+    });
+   /*axios.create({
+      baseURL: "localhost:8000",
+    })
+    .post("/api/token/", {  
+      username:"rond.nely",
+      password:"123"
+    })
+    .then((response)=> console.log(response.data))
+    .catch((err)=> {
+      console.error("Errro!")
+    });*/
+    /*axios.create({
+      baseURL: "localhost:8000",
+    })
+    .post("/api/token/", {  
+      username:"rond.nely",
+      password:"123"
+    })
+    .then((response)=> console.log(response.data))
+    .catch((err)=> {
+      console.error("Errro!")
+    });*/
+
     if(localStorage.getItem('acessos') === null){
       localStorage.setItem('acessos','{"alunoAcesso": false, "professorAcesso": false}')
       setAuth(JSON.parse(localStorage.getItem('acessos')));
