@@ -68,6 +68,7 @@ export default () => {
         .then((r)=> {
           console.log(r.data.access)
           let novotoken = r.data.access;
+          setToken(novotoken);
  
           axios.get(urlBase+"/sigapi/api/users/",{
             headers:{
@@ -210,7 +211,7 @@ export default () => {
   }
   
   return (
-    <AuthContext.Provider value={{auth,setAuth}}>
+    <AuthContext.Provider value={{auth,setAuth, token, setToken}}>
             <BrowserRouter>
               <Routes>
                       {(auth.alunoAcesso || auth.professorAcesso) ? 

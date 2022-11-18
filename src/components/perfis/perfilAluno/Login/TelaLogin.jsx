@@ -1,5 +1,7 @@
 import React from "react";
 import {redirect, useNavigate } from "react-router-dom";
+import axios from 'axios';
+import { useEffect } from "react";
 import { useContext } from "react";
 import AuthContext from "../../../../contextos/AuthContext";
 import './TelaLogin.css'
@@ -7,6 +9,50 @@ import './TelaLogin.css'
 export default function TelaLogin(){
     let navigate = useNavigate();
     const {auth,setAuth} = useContext(AuthContext);
+    const {token,setToken} = useContext(AuthContext);
+    const urlBase = "http://localhost:8000";
+  useEffect(()=>{
+    axios.get(urlBase+"/sigapi/api/users/",{
+      headers:{
+        Authorization: `Bearer ${token}`
+      }
+    })
+    .then((response)=> console.log(response.data))
+    .catch((err)=> {
+      let codigoErro = err.response.status;
+      console.log("Código: " + codigoErro);
+ 
+      if(codigoErro === 401){
+        /*REQUISITO PRA PEGAR O NOVO TOKEN*/
+        console.log("REQUEST DNV")
+ 
+        axios.post(urlBase+"/api/token/", {  
+           username:"rond.nely",
+           password:"123"
+        })
+        .then((r)=> {
+          console.log(r.data.access)
+          let novotoken = r.data.access;
+          setToken(novotoken);
+ 
+          axios.get(urlBase+"/sigapi/api/users/",{
+            headers:{
+              Authorization: `Bearer ${novotoken}`
+            }
+          })
+          .then((rp)=> console.log(rp.data))
+        })
+        .catch((err)=> {
+          console.error("Erro na autenticação!")
+        });
+      }
+ 
+    });
+  },[]);
+        
+
+
+
 
     return <div id="login">
                 <div className="side-one">
