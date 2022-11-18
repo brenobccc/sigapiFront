@@ -42,34 +42,152 @@ export default () => {
     professorAcesso: false
   });
   
-  
+  const [token,setToken] = useState('eyJhbGcikOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY4ODE2NDk0LCJpYXQiOjE2Njg4MTI4OTQsImp0aSI6IjRmZWRlYzgzYjJkYzRhYWU4ZWY3YTgxNDE2NjQ2MDY0IiwidXNlcl9pZCI6MX0.1OZvhceYPEGdzYdeHF7wg1wjjJHhDXr-WYrQgTPNU8w');
+  const urlBase = "http://localhost:8000";
+ 
   useEffect(()=>{
-    axios.get("http://localhost:8000/sigapi/api/users/",{
+ 
+    axios.get(urlBase+"/sigapi/api/users/",{
       headers:{
-        Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY4ODAxOTk5LCJpYXQiOjE2Njg3OTgzOTksImp0aSI6ImM2M2VjMzNhY2IzMjQ2NGQ4ZDAyNmMyMzcwYjRmMDg4IiwidXNlcl9pZCI6MX0.H4kQLjhaiuzIgwbo5cEUBomf05LMzp5lYjGWDplhc3Q"
+        Authorization: `Bearer ${token}`
+      }
+    })
+    .then((response)=> console.log(response.data))
+    .catch((err)=> {
+      let codigoErro = err.response.status;
+      console.log("Código: " + codigoErro);
+ 
+      if(codigoErro === 401){
+        /*REQUISITO PRA PEGAR O NOVO TOKEN*/
+        console.log("REQUEST DNV")
+ 
+        axios.post(urlBase+"/api/token/", {  
+           username:"rond.nely",
+           password:"123"
+        })
+        .then((r)=> {
+          console.log(r.data.access)
+          let novotoken = r.data.access;
+ 
+          axios.get(urlBase+"/sigapi/api/users/",{
+            headers:{
+              Authorization: `Bearer ${novotoken}`
+            }
+          })
+          .then((rp)=> console.log(rp.data))
+        })
+        .catch((err)=> {
+          console.error("Erro na autenticação!")
+        });
+      }
+ 
+    });
+    /*
+    //GET USUARIO
+    axios.get("http://localhost:8000/sigapi/api/users/",
+    {
+      headers:{
+        Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY4ODAzMTEwLCJpYXQiOjE2Njg3OTk1MTAsImp0aSI6ImY3OTkzZWMwZjY5YzQwMWM5MzZjOGYzYjEzNmY0MGFiIiwidXNlcl9pZCI6MX0.jSqNA9VvbYpr-MblyYzCBIsOof7PVtKEqY8usdKSzig"
       }
     })
     .then((response)=> console.log(response.data))
     .catch((err)=> {
       console.error("Errro!")
     });
-   /*axios.create({
-      baseURL: "localhost:8000",
-    })
-    .post("/api/token/", {  
-      username:"rond.nely",
-      password:"123"
+    //POST USUARIO
+    axios.post("http://localhost:8000/sigapi/api/users/",
+    {
+      username: "br",
+    password: "123",
+    email: "brit@gmail.com"
+    },
+    {
+      headers:{
+        Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY4ODAzMTEwLCJpYXQiOjE2Njg3OTk1MTAsImp0aSI6ImY3OTkzZWMwZjY5YzQwMWM5MzZjOGYzYjEzNmY0MGFiIiwidXNlcl9pZCI6MX0.jSqNA9VvbYpr-MblyYzCBIsOof7PVtKEqY8usdKSzig"
+      }
     })
     .then((response)=> console.log(response.data))
     .catch((err)=> {
       console.error("Errro!")
-    });*/
-    /*axios.create({
+    });
+     //GET ALUNO
+     axios.get("http://localhost:8000/sigapi/api/aluno/",
+     {
+      headers:{
+        Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY4ODAzMTEwLCJpYXQiOjE2Njg3OTk1MTAsImp0aSI6ImY3OTkzZWMwZjY5YzQwMWM5MzZjOGYzYjEzNmY0MGFiIiwidXNlcl9pZCI6MX0.jSqNA9VvbYpr-MblyYzCBIsOof7PVtKEqY8usdKSzig"
+      }
+    })
+    .then((response)=> console.log(response.data))
+    .catch((err)=> {
+      console.error("Errro!")
+    });
+    //POST ALUNO
+    axios.post("http://localhost:8000/sigapi/api/aluno/",
+    {
+      user: "http://127.0.0.1:8000/sigapi/api/users/7/",
+      matricula: 222,
+      cpf: 22,
+      born: "2022-10-11",
+      endereco: "aracati",
+      nome_pai: "qrq",
+      nome_mae: "qwq",
+      sexo: "f",
+      telefone: "9985742",
+      estado_civil: "C",
+      rg: "11"
+    },
+    {
+      headers:{
+        Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY4ODAzMTEwLCJpYXQiOjE2Njg3OTk1MTAsImp0aSI6ImY3OTkzZWMwZjY5YzQwMWM5MzZjOGYzYjEzNmY0MGFiIiwidXNlcl9pZCI6MX0.jSqNA9VvbYpr-MblyYzCBIsOof7PVtKEqY8usdKSzig"
+      }
+    })
+    .then((response)=> console.log(response.data))
+    .catch((err)=> {
+      console.error("Errro!")
+    });
+     //GET PROFESSOR
+     axios.get("http://localhost:8000/sigapi/api/professor/",
+     {
+      headers:{
+        Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY4ODAzMTEwLCJpYXQiOjE2Njg3OTk1MTAsImp0aSI6ImY3OTkzZWMwZjY5YzQwMWM5MzZjOGYzYjEzNmY0MGFiIiwidXNlcl9pZCI6MX0.jSqNA9VvbYpr-MblyYzCBIsOof7PVtKEqY8usdKSzig"
+      }
+    })
+    .then((response)=> console.log(response.data))
+    .catch((err)=> {
+      console.error("Errro!")
+    });
+    //POST PROFESSOR
+    axios.post("http://localhost:8000/sigapi/api/professor/",
+    {
+      "user": "http://127.0.0.1:8000/sigapi/api/users/4/",
+      "cpf": 22,
+      "born": "2022-10-11",
+      "endereco": "aracati",
+      "salario": 100,
+      "alvos":"b",
+      "grau":"B"
+    },
+    {
+      headers:{
+        Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY4ODAzMTEwLCJpYXQiOjE2Njg3OTk1MTAsImp0aSI6ImY3OTkzZWMwZjY5YzQwMWM5MzZjOGYzYjEzNmY0MGFiIiwidXNlcl9pZCI6MX0.jSqNA9VvbYpr-MblyYzCBIsOof7PVtKEqY8usdKSzig"
+      }
+    })
+    .then((response)=> console.log(response.data))
+    .catch((err)=> {
+      console.error("Errro!")
+    });
+
+   /*axios.create({
       baseURL: "localhost:8000",
     })
-    .post("/api/token/", {  
-      username:"rond.nely",
-      password:"123"
+    .post("http://localhost:8000/sigapi/api/users/",{
+      headers:{
+        Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY4ODAxOTk5LCJpYXQiOjE2Njg3OTgzOTksImp0aSI6ImM2M2VjMzNhY2IzMjQ2NGQ4ZDAyNmMyMzcwYjRmMDg4IiwidXNlcl9pZCI6MX0.H4kQLjhaiuzIgwbo5cEUBomf05LMzp5lYjGWDplhc3Q"
+      }
+    }, {
+      username: "c",
+    password: "123",
+    email: "mar@gmail.com"
     })
     .then((response)=> console.log(response.data))
     .catch((err)=> {
