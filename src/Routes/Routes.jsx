@@ -42,10 +42,20 @@ export default () => {
     professorAcesso: false
   });
   
-  const [token,setToken] = useState('eyJhbGcikOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY4ODE2NDk0LCJpYXQiOjE2Njg4MTI4OTQsImp0aSI6IjRmZWRlYzgzYjJkYzRhYWU4ZWY3YTgxNDE2NjQ2MDY0IiwidXNlcl9pZCI6MX0.1OZvhceYPEGdzYdeHF7wg1wjjJHhDXr-WYrQgTPNU8w');
+  const [token,setToken] = useState('');
   const urlBase = "http://localhost:8000";
  
-  useEffect(()=>{
+  useEffect(()=>{ 
+    if(localStorage.getItem('acessos') === null){
+      localStorage.setItem('acessos','{"alunoAcesso": false, "professorAcesso": false}')
+      setAuth(JSON.parse(localStorage.getItem('acessos')));
+      return;
+    }
+    setAuth(JSON.parse(localStorage.getItem('acessos')))
+    return;
+
+  },[]);
+  /*useEffect(()=>{
  
     axios.get(urlBase+"/sigapi/api/users/",{
       headers:{
@@ -58,7 +68,7 @@ export default () => {
       console.log("Código: " + codigoErro);
  
       if(codigoErro === 401){
-        /*REQUISITO PRA PEGAR O NOVO TOKEN*/
+        
         console.log("REQUEST DNV")
  
         axios.post(urlBase+"/api/token/", {  
@@ -195,14 +205,14 @@ export default () => {
       console.error("Erro!")
     });*/
 
-    if(localStorage.getItem('acessos') === null){
+    /*if(localStorage.getItem('acessos') === null){
       localStorage.setItem('acessos','{"alunoAcesso": false, "professorAcesso": false}')
       setAuth(JSON.parse(localStorage.getItem('acessos')));
       return;
     }
     setAuth(JSON.parse(localStorage.getItem('acessos')))
     return;
-  },[]);
+  },[]);*/
   
   function rotas(){
     return auth.alunoAcesso ? rotasAlunos.map((l) => l) : auth.professorAcesso ? rotasProfessor.map((l) => l) : ""
