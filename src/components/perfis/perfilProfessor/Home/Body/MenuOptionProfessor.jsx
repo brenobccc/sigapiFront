@@ -38,7 +38,7 @@ export default function MenuOptionProfessor(props){
 
     let navigate = useNavigate();
 
-    return <div id={props.wallpaperIndex} style={estilo} onClick={()=> { navigate(`/${props.screen}`);}}>
+    return <div id={props.wallpaperIndex} style={estilo} onClick={()=> { navigate(`/${props.screen === undefined ? '' : props.screen}`);}}>
         {/*props.nome === undefined ? '' : props.nome*/}
     </div>
 }

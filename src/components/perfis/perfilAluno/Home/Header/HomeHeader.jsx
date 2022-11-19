@@ -10,7 +10,7 @@ export default function HomeHeader(){
     <>
         <div className="header">
             <div className="header-nav"> 
-                <div className="logo" onClick={() => alert("teste")}></div>
+                <div className="logo"></div>
                 <nav>  
                     <ul>
                         <li className="botao2" onClick={()=>{

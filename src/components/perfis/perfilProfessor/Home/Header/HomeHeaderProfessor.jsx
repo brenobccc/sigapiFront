@@ -10,7 +10,7 @@ export default function HomeHeaderProfessor(){
     <>
         <div className="header-professor">
             <div className="header-professor-nav"> 
-                <div className="logo" onClick={() => alert("teste")}></div>
+                <div className="logo"></div>
                 <nav>  
                     <ul>
                         <li className="botao2" onClick={()=>{

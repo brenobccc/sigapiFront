@@ -23,10 +23,10 @@ export default function HomeBody(){
 
     let lista = [
         <MenuOption wallpaperIndex={wallpapers.home} screen="aluno/home" backgroundColor={colors[0]} nome="HOME"/>,
-        <MenuOption wallpaperIndex={wallpapers.calendarioacademico} screen="aluno/calendarioacademico" backgroundColor={colors[1]} nome="CALENDÁRIO ACADEMICO"/>,
+        <MenuOption wallpaperIndex={wallpapers.calendarioacademico} backgroundColor={colors[1]} nome="CALENDÁRIO ACADEMICO"/>,
         <MenuOption wallpaperIndex={wallpapers.diario} screen="aluno/diario" backgroundColor={colors[2]} nome="DIÁRIO"/>,
-        <MenuOption wallpaperIndex={wallpapers.horarioindividual} screen="aluno/horarioindividual" backgroundColor={colors[3]} nome="HORÁRIO INDIVIDUAL"/>,
-        <MenuOption wallpaperIndex={wallpapers.boletim} screen="aluno/boletim" backgroundColor={colors[4]} nome="BOLETIM"/>,
+        <MenuOption wallpaperIndex={wallpapers.horarioindividual}  backgroundColor={colors[3]} nome="HORÁRIO INDIVIDUAL"/>,
+        <MenuOption wallpaperIndex={wallpapers.boletim} backgroundColor={colors[4]} nome="BOLETIM"/>,
         <MenuOption/>,
         <MenuOption/>,
         <MenuOption/>,

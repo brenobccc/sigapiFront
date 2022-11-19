@@ -51,14 +51,15 @@ export default function TelaLogin() {
   },[]);*/
 
   function login(userStudent, passStudent){
-    console.log("entrou")
     /*Validações*/
     if (userStudent.trim().length === 0) {
-      alert("Preecha os campos!");
+      alert("Informe uma matrícula!");
       return;
-    }
-
-                
+    } 
+    if (passStudent.trim().length === 0) {
+      alert("Informe uma senha!");
+      return;
+    } 
     axios.post(urlBase+"/api/token/", {  
       username:`${userStudent}`,
       password:`${passStudent}`
@@ -69,12 +70,11 @@ export default function TelaLogin() {
     console.log(response.data);
 
     let token = response.data.access;
-    setToken(token);
+    setToken(token);/*aproveita que já  tem um token e seta o token de acesso sendo o de aluno
+    mas o recomendado seria uso do token do user admin. cenas dos próximos capitulos*/ 
     
     localStorage.setItem('acessos','{"alunoAcesso": true, "professorAcesso": false}')
     setAuth(JSON.parse(localStorage.getItem('acessos')));
-    //navigate('/')
-
   })
   .catch((err)=> {
     console.error("Erro na autenticação!")

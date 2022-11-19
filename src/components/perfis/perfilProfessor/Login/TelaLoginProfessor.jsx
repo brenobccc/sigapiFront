@@ -1,9 +1,48 @@
 import React from "react";
 import {useNavigate } from "react-router-dom";
+import axios from "axios";
 import './TelaLoginProfessor.css'
+import { useContext } from "react";
+import AuthContext from "../../../../contextos/AuthContext";
 
 export default function TelaLoginProfessor(){
     let navigate = useNavigate();
+    const urlBase = "http://localhost:8000";
+    const {token, setToken} = useContext(AuthContext);
+    const {auth, setAuth} = useContext(AuthContext);
+    
+
+    function login(userProf, userPass){
+        /*Validações*/
+        if (userProf.trim().length === 0) {
+          alert("Informe uma matrícula!");
+          return;
+        } 
+        if (userPass.trim().length === 0) {
+          alert("Informe uma senha!");
+          return;
+        } 
+        axios.post(urlBase+"/api/token/", {  
+          username:`${userProf}`,
+          password:`${userPass}`
+      })
+      .then((response)=> {
+        console.log("entrou");  
+        console.log("deu certo");
+        console.log(response.data);
+    
+        let token = response.data.access;
+        setToken(token);/*aproveita que já  tem um token e seta o token de acesso sendo o de aluno
+        mas o recomendado seria uso do token do user admin. cenas dos próximos capitulos*/ 
+        
+        localStorage.setItem('acessos','{"alunoAcesso": false, "professorAcesso": true}')
+        setAuth(JSON.parse(localStorage.getItem('acessos')));
+      })
+      .catch((err)=> {
+        console.error("Erro na autenticação!")
+      });
+    }
+
     return <div id="login">
                 <div className="side-one">
                     <h2> Seja bem vindo!</h2>
@@ -15,7 +54,7 @@ export default function TelaLoginProfessor(){
 
                         </div>
                         <div id="login-form">
-                                <form id="login-content">
+                                <div id="login-content">
                                     <label>
                                         <input type="text" placeholder=" Matrícula " id="lp"/>
                                     </label>
@@ -27,17 +66,10 @@ export default function TelaLoginProfessor(){
                                         <button type="submit" onClick={() => {
                                             let userProf = document.getElementById("lp").value;
                                             let passProf = document.getElementById("pp").value;
-
-                                            if(userProf === 'adminprofessor@gmail.com' && passProf === '1234'){
-                                                localStorage.setItem('acessos','{"alunoAcesso": false, "professorAcesso": true}')
-                                            }else{
-                                                alert("Tente novamente!!");
-                                            }
-                                           //let acessos = localStorage.getItem('acessos');
-                                           //console.log(JSON.parse(acessos))
+                                            login(userProf, passProf);
                                         }}>Entrar</button>
                                     </div>
-                                </form>
+                                </div>
                         </div>
                    </div> 
                 </div>

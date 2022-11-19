@@ -16,11 +16,11 @@ const colors = ['#A9BB97','#D7F9D4','#D8EAF8','#BDDF9B',
 
 export default function HomeBody(){
     let lista = [
-        <MenuOptionProfessor wallpaperIndex={wallpapers.home} screen="professor/home" backgroundColor={colors[0]} nome="HOME"/>,
-        <MenuOptionProfessor wallpaperIndex={wallpapers.calendarioacademico} screen="professor/calendarioacademico" backgroundColor={colors[1]} nome="CALENDÁRIO ACADEMICO"/>,
-        <MenuOptionProfessor wallpaperIndex={wallpapers.diario} screen="professor/diario" backgroundColor={colors[2]} nome="DIÁRIO"/>,
-        <MenuOptionProfessor wallpaperIndex={wallpapers.horarioindividual} screen="professor/horarioindividual" backgroundColor={colors[3]} nome="HORÁRIO INDIVIDUAL"/>,
-        <MenuOptionProfessor wallpaperIndex={wallpapers.boletim} screen="professor/boletim" backgroundColor={colors[4]} nome="BOLETIM"/>,
+        <MenuOptionProfessor  wallpaperIndex={wallpapers.home} backgroundColor={colors[0]} nome="HOME"/>,
+        <MenuOptionProfessor  wallpaperIndex={wallpapers.calendarioacademico} backgroundColor={colors[1]} nome="CALENDÁRIO ACADEMICO"/>,
+        <MenuOptionProfessor  wallpaperIndex={wallpapers.diario} backgroundColor={colors[2]} nome="DIÁRIO"/>,
+        <MenuOptionProfessor  wallpaperIndex={wallpapers.horarioindividual} backgroundColor={colors[3]} nome="HORÁRIO INDIVIDUAL"/>,
+        <MenuOptionProfessor  wallpaperIndex={wallpapers.boletim} backgroundColor={colors[4]} nome="BOLETIM"/>,
         <MenuOptionProfessor/>,
         <MenuOptionProfessor/>,
         <MenuOptionProfessor/>,

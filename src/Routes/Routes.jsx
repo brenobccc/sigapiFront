@@ -16,6 +16,7 @@ import { useState } from "react";
 import AuthContext from '../contextos/AuthContext.jsx'
 import { useEffect } from "react";
 import TelaLoginProfessor from "../components/perfis/perfilProfessor/Login/TelaLoginProfessor.jsx";
+import CadastroAluno from "../components/perfis/perfilAluno/Cadastro/CadastroAluno.jsx";
 
 const alunoAcesso = !true;
 const professorAcesso = !true;
@@ -231,6 +232,7 @@ export default () => {
                          <Route path="/professor/Login" element={<TelaLoginProfessor/>} />,
                           )</>
                       }
+                      {<Route path="/aluno/Cadastro" element={<CadastroAluno/>} />}
                     { /*:(
                       <Route path="/" exact element={<TelaApresentacao/>} />  
                       <Route path="*" element={<Navigate replace to="/"/>}/>
